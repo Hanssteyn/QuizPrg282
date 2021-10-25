@@ -16,6 +16,17 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String path = @"NTD.txt";
+            
+            if (file.exist(path))
+            {
+                using(textreader reader =File.OpenText(path))
+                {
+                    listBox1.Text = reader.ReadToEnd();
+                }
+            }
+        }  
     }
 }
